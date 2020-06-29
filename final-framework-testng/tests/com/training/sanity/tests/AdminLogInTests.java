@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -15,7 +16,7 @@ import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class LoginTests {
+public class AdminLogInTests {
 
 	private WebDriver driver;
 	private String baseUrl;
@@ -36,7 +37,6 @@ public class LoginTests {
 		loginPOM = new LoginPOM(driver); 
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
-		// open the browser 
 		driver.get(baseUrl);
 	}
 	
@@ -46,10 +46,17 @@ public class LoginTests {
 		driver.quit();
 	}
 	@Test
-	public void validLoginTest() {
+	public void validLoginTest() throws InterruptedException {
+		loginPOM.clickLoginLink();
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
 		loginPOM.clickLoginBtn(); 
-		screenShot.captureScreenShot("First");
+		screenShot.captureScreenShot("RETC_010");
+		loginPOM.dashboardTxt();
+	
+		
+		String actualResult = loginPOM.dashboardTxt();
+		String expectedResult = "Dashboard"; 
+		Assert.assertEquals(actualResult, expectedResult);
 	}
 }

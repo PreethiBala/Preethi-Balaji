@@ -13,14 +13,25 @@ public class LoginPOM {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(id="login")
+	@FindBy(xpath="//*[@href='http://realty-real-estatem1.upskills.in/my-profile/' and @class='sign-in']")
+//	@FindBy(xpath="//*[@href='http://realty-real-estatem1.upskills.in/my-profile/']")
+	private WebElement loginLink; 
+	
+	@FindBy(id="user_login")
 	private WebElement userName; 
 	
-	@FindBy(id="password")
+	@FindBy(id="user_pass")
 	private WebElement password;
 	
-	@FindBy(id="formLogin_submitAuth")
+	@FindBy(name="login")
 	private WebElement loginBtn; 
+	
+	@FindBy(xpath="//*[@class='wp-menu-name' and text()='Dashboard']")
+	private WebElement dashboardTxt; 
+	
+	public void clickLoginLink() {
+		this.loginLink.click(); 
+	}
 	
 	public void sendUserName(String userName) {
 		this.userName.clear();
@@ -34,5 +45,8 @@ public class LoginPOM {
 	
 	public void clickLoginBtn() {
 		this.loginBtn.click(); 
+	}
+	public String dashboardTxt() {
+		return this.dashboardTxt.getText();
 	}
 }
