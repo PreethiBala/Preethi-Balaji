@@ -1,3 +1,11 @@
+/**************************************************************
+ * Script Name - SendQueryFromContactsTests
+ * Description - To Verify whether application allows user to send the query in Contact Form Page
+ * Date created - 28th June 2020
+ * Developed by - Preethi IBM India
+ * Last Modified By - Preethi IBM India
+ * Last Modified Date - 2nd July 2020
+ ***************************************************************/
 package com.training.sanity.tests;
 
 import java.awt.AWTException;
@@ -49,7 +57,6 @@ public class SendQueryFromContactsTests {
 		screenShot = new ScreenShot(driver); 
 		driver.get(baseUrl);
 	}
-
 	@AfterMethod
 	public void tearDown() throws Exception {
 		Thread.sleep(1000);
@@ -57,38 +64,30 @@ public class SendQueryFromContactsTests {
 	}
 	@Test
 	public void validLoginTest() throws InterruptedException, AWTException {
-
-		Actions act= new Actions(driver);
-		WebElement blogSeection = driver.findElement(By.id("menu-item-617"));	
-		act.contextClick(blogSeection).build().perform();
-		Robot robot= new Robot();
-		robot.keyPress(KeyEvent.VK_DOWN);
-		Thread.sleep(2000);
-
-		robot.keyPress(KeyEvent.VK_ENTER);
-
-		ArrayList<String> windowdetails=new ArrayList<>(driver.getWindowHandles());
-		driver.switchTo().window(windowdetails.get(1));
+		
+		//Click on Blog section and open in a new window 
+		contactFormPOM.openBlogInNewWindow();
+		
 		Thread.sleep(2000);
 		contactFormPOM.dropusLink();
 		Thread.sleep(2000);
-		contactFormPOM.sendName("manzoor");
+		contactFormPOM.sendName("manzoosssssr");
 		contactFormPOM.sendEmail("manzoor@gmail.com");
 		contactFormPOM.sendSubject("apartments");
 		contactFormPOM.sendMessage("looking for an apartments");
 		System.out.println("new");
 		contactFormPOM.clickSubmiteBtn();
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
-		JavascriptExecutor js= (JavascriptExecutor)driver;
-
-		js.executeScript("window.scrollBy(0,150)");
+		//To scroll the screen
+		contactFormPOM.scrollTo();
 		Thread.sleep(5000);
-		screenShot.captureScreenShot("RETC-012");
-
-
+		screenShot.captureScreenShot("RETC-012_Contact");
+		
+		//Verify the confirmation message
 		String actualResult = contactFormPOM.verifyThankYouMsg();
 		String expectedResult = "Thank you for your message. It has been sent. Message should get displayed"; 
 		Assert.assertEquals(actualResult, expectedResult);
 		//Application Defect
 	}
+
 }

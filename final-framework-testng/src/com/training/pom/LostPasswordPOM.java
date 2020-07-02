@@ -13,7 +13,6 @@ public class LostPasswordPOM {
 		PageFactory.initElements(driver, this);
 	}
 	
-
 	@FindBy(xpath="//*[@href='http://realty-real-estatem1.upskills.in/wp-login.php?action=lostpassword']")
 	private WebElement lostPwdLink; 
 	

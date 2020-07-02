@@ -1,3 +1,11 @@
+/**************************************************************
+ * Script Name - AdminLogInTests
+ * Description - To Verify whether application allows registered admin to login into applicationv
+ * Date created - 28th June 2020
+ * Developed by - Preethi IBM India
+ * Last Modified By - Preethi IBM India
+ * Last Modified Date - 2nd July 2020
+ ***************************************************************/
 package com.training.sanity.tests;
 
 import java.io.FileInputStream;
@@ -39,7 +47,7 @@ public class AdminLogInTests {
 		screenShot = new ScreenShot(driver); 
 		driver.get(baseUrl);
 	}
-	
+
 	@AfterMethod
 	public void tearDown() throws Exception {
 		Thread.sleep(1000);
@@ -51,10 +59,10 @@ public class AdminLogInTests {
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
 		loginPOM.clickLoginBtn(); 
-		screenShot.captureScreenShot("RETC_010");
+		screenShot.captureScreenShot("RETC_010_Admin Login");
 		loginPOM.dashboardTxt();
-	
-		
+
+		//To verify whether admin user is successfully logged in 
 		String actualResult = loginPOM.dashboardTxt();
 		String expectedResult = "Dashboard"; 
 		Assert.assertEquals(actualResult, expectedResult);

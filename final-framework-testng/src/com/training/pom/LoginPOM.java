@@ -14,7 +14,6 @@ public class LoginPOM {
 	}
 	
 	@FindBy(xpath="//*[@href='http://realty-real-estatem1.upskills.in/my-profile/' and @class='sign-in']")
-//	@FindBy(xpath="//*[@href='http://realty-real-estatem1.upskills.in/my-profile/']")
 	private WebElement loginLink; 
 	
 	@FindBy(id="user_login")

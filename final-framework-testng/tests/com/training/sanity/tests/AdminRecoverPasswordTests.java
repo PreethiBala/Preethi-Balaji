@@ -1,3 +1,11 @@
+/**************************************************************
+ * Script Name - AdminRecoverPasswordTests
+ * Description - To verify whether application allows the admin to recover the password
+ * Date created - 28th June 2020
+ * Developed by - Preethi IBM India
+ * Last Modified By - Preethi IBM India
+ * Last Modified Date - 2nd July 2020
+ ***************************************************************/
 package com.training.sanity.tests;
 
 import java.io.FileInputStream;
@@ -55,8 +63,9 @@ public class AdminRecoverPasswordTests {
 		loginPOM.sendUserName("admin");
 		screenShot.captureScreenShot("RETC_010_SC1");
 		lostPasswordPOM.clickLostPwdBtn();
-		screenShot.captureScreenShot("RETC_010");
-
+		screenShot.captureScreenShot("RETC_010_RecoverPassword");
+		
+		//To verify the displayed confirmation message for recover password
 		String actualResult = lostPasswordPOM.verifyConfirmationMsg();
 		String expectedResult = "A confirmation link has been sent to your email address. Message should get displayed & confirmation mail should be sent to registered mail id"; 
 		Assert.assertEquals(actualResult, expectedResult);

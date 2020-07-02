@@ -1,7 +1,15 @@
 package com.training.pom;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -42,7 +50,7 @@ public class ContactFormPOM {
 	private WebElement thankYouMsg; 
 	
 	public void blogSection() {
-		this.blogSection.click(); 
+		this.blogSection.click();
 	}
 	
 	public void dropusLink() {
@@ -73,5 +81,46 @@ public class ContactFormPOM {
 	}
 	public String verifyThankYouMsg() {
 		return this.thankYouMsg.getText();
+	}
+	
+	
+	/**************************************************************
+	 * Function Name - scrollTo()
+	 * Description -To scroll the screen using JavaScriptExecutor with a dimension of (0, 150)
+	 * Date created - 2nd July 2020 
+	 * Developed by - Preethi IBM India
+	 * Last Modified By - 
+	 * Last Modified Date - 
+	 * 
+	 * @throws Exception
+	 ***************************************************************/
+	public void scrollTo() {	
+	JavascriptExecutor js= (JavascriptExecutor)driver;
+	js.executeScript("window.scrollBy(0,150)");
+	}
+	
+	/**************************************************************
+	 * Function Name - openBlogInNewWindow()
+	 * Description -To click on Blog section and launch in a new tab
+	 * Date created - 2nd July 2020 
+	 * Developed by - Preethi IBM India
+	 * Last Modified By - 
+	 * Last Modified Date - 
+	 * 
+	 * @throws Exception
+	 ***************************************************************/
+	public void openBlogInNewWindow() throws AWTException, InterruptedException {
+	
+	Actions act= new Actions(driver);
+	act.contextClick(blogSection).build().perform(); 
+	Robot robot= new Robot();
+	robot.keyPress(KeyEvent.VK_DOWN);
+	Thread.sleep(2000);
+
+	robot.keyPress(KeyEvent.VK_ENTER);
+
+	ArrayList<String> windowdetails=new ArrayList<>(driver.getWindowHandles());
+	driver.switchTo().window(windowdetails.get(1));
+	
 	}
 }
