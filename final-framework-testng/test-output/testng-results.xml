@@ -2,34 +2,32 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="28063" started-at="2020-06-29T11:22:03 IST" finished-at="2020-06-29T11:22:31 IST">
+  <suite name="Default suite" duration-ms="40364" started-at="2020-07-02T13:20:54 IST" finished-at="2020-07-02T13:21:35 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="28063" started-at="2020-06-29T11:22:03 IST" finished-at="2020-06-29T11:22:31 IST">
-      <class name="com.training.sanity.tests.AdminRecoverPasswordTests">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.AdminRecoverPasswordTests@614ddd49]" name="setUpBeforeClass" is-config="true" duration-ms="9" started-at="2020-06-29T11:22:03 IST" finished-at="2020-06-29T11:22:03 IST">
+    <test name="Default test" duration-ms="40364" started-at="2020-07-02T13:20:54 IST" finished-at="2020-07-02T13:21:35 IST">
+      <class name="com.training.sanity.tests.SendQueryFromContactsTests">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.SendQueryFromContactsTests@614ddd49]" name="setUpBeforeClass" is-config="true" duration-ms="10" started-at="2020-07-02T13:20:54 IST" finished-at="2020-07-02T13:20:54 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.AdminRecoverPasswordTests@614ddd49]" name="setUp" is-config="true" duration-ms="19528" started-at="2020-06-29T11:22:03 IST" finished-at="2020-06-29T11:22:22 IST">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.SendQueryFromContactsTests@614ddd49]" name="setUp" is-config="true" duration-ms="21121" started-at="2020-07-02T13:20:54 IST" finished-at="2020-07-02T13:21:15 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="recoveryPwdTest()[pri:0, instance:com.training.sanity.tests.AdminRecoverPasswordTests@614ddd49]" name="recoveryPwdTest" duration-ms="6755" started-at="2020-06-29T11:22:22 IST" finished-at="2020-06-29T11:22:29 IST">
+        <test-method status="FAIL" signature="validLoginTest()[pri:0, instance:com.training.sanity.tests.SendQueryFromContactsTests@614ddd49]" name="validLoginTest" duration-ms="17408" started-at="2020-07-02T13:21:15 IST" finished-at="2020-07-02T13:21:33 IST">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected [A confirmation link has been sent to your email address. Message should get displayed & confirmation mail should be sent to registered mail id] but found [The email could not be sent.
-Possible reason: your host may have disabled the mail() function.]]]>
+              <![CDATA[expected [Thank you for your message. It has been sent. Message should get displayed] but found [There was an error trying to send your message. Please try again later.]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [A confirmation link has been sent to your email address. Message should get displayed & confirmation mail should be sent to registered mail id] but found [The email could not be sent.
-Possible reason: your host may have disabled the mail() function.]
+              <![CDATA[java.lang.AssertionError: expected [Thank you for your message. It has been sent. Message should get displayed] but found [There was an error trying to send your message. Please try again later.]
 at org.testng.Assert.fail(Assert.java:97)
 at org.testng.Assert.assertEqualsImpl(Assert.java:136)
 at org.testng.Assert.assertEquals(Assert.java:118)
 at org.testng.Assert.assertEquals(Assert.java:575)
 at org.testng.Assert.assertEquals(Assert.java:585)
-at com.training.sanity.tests.AdminRecoverPasswordTests.recoveryPwdTest(AdminRecoverPasswordTests.java:62)
+at com.training.sanity.tests.SendQueryFromContactsTests.validLoginTest(SendQueryFromContactsTests.java:89)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -63,12 +61,12 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- recoveryPwdTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.AdminRecoverPasswordTests@614ddd49]" name="tearDown" is-config="true" duration-ms="1720" started-at="2020-06-29T11:22:29 IST" finished-at="2020-06-29T11:22:31 IST">
+        </test-method> <!-- validLoginTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.SendQueryFromContactsTests@614ddd49]" name="tearDown" is-config="true" duration-ms="1788" started-at="2020-07-02T13:21:33 IST" finished-at="2020-07-02T13:21:35 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.sanity.tests.AdminRecoverPasswordTests -->
+      </class> <!-- com.training.sanity.tests.SendQueryFromContactsTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
