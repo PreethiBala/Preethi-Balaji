@@ -60,7 +60,7 @@ public class AddPostInBlogSectionTests extends AdminLogInTests {
 		addPostPOM = new AddPostPOM(driver);
 		screenShot = new ScreenShot(driver); 
 
-		//To add a new Category
+		//To add a new Category 
 		addCategoryPOM.clickOnPost();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		Assert.assertTrue(driver.getPageSource().contains("All Posts"));
