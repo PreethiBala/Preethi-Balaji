@@ -35,12 +35,15 @@ public class GenericMethods {
 		
 		if(type.equals("id")){
 			element  =  driver.findElement(By.id(locator));
-		} else if(type.equals("css")){
+			
+		}else if(type.equals("css")){
 			element = driver.findElement(By.cssSelector(locator));
 		}else if (type.equals("name")){
 			element  = driver.findElement(By.name(locator));
 		}else if(type.equals("xpath")){
 			element = driver.findElement(By.xpath(locator));
+		}else if(type.equals("linkText")) {
+			element = driver.findElement(By.linkText(locator));
 		}
 		if(checkSingleEntry(locator, type)){
 			System.out.println("Element Found and Returned");

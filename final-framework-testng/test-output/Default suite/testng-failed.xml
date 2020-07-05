@@ -3,14 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.SendQueryFromContactsTests">
+      <class name="com.training.sanity.tests.AddPostInBlogSectionTests">
         <methods>
-          <include name="setUp"/>
           <include name="setUpBeforeClass"/>
-          <include name="tearDown"/>
-          <include name="validLoginTest"/>
+          <include name="addCategory"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.SendQueryFromContactsTests -->
+      </class> <!-- com.training.sanity.tests.AddPostInBlogSectionTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
