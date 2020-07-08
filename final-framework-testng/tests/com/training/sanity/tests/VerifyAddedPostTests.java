@@ -59,6 +59,8 @@ public class VerifyAddedPostTests  extends AdminLogInTests {
 		addPostPOM = new AddPostPOM(driver);
 		screenShot = new ScreenShot(driver); 
 		
+		
+		
 		//To add a new post
 		addPostPOM.clickOnPost();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

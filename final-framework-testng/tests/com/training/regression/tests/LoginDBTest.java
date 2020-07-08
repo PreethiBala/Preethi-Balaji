@@ -20,7 +20,7 @@ import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class LoginDBTest {
+public class LoginDBTest { 
 	private WebDriver driver;
 	private String baseUrl;
 	private LoginPOM loginPOM;

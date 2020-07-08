@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 import com.training.bean.DBBean;
 
-public class GetConnection {
+public class GetConnection { 
 	static Connection connection; 
 	public PreparedStatement ps1, ps2; 
 	public ResultSet rs1, rs2; 

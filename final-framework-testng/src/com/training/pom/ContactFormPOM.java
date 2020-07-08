@@ -49,6 +49,9 @@ public class ContactFormPOM {
 	@FindBy(name="subject")
 	private WebElement subject; 
 	
+	@FindBy(xpath="//*[@name='email' and @aria-invalid='true']")
+	private WebElement emailIsIncorrect; 
+	
 	@FindBy(xpath="//*[@class='wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required']")
 	private WebElement message; 
 	
@@ -57,6 +60,9 @@ public class ContactFormPOM {
 	
 	@FindBy(xpath="//*[@class='wpcf7-response-output wpcf7-display-none wpcf7-mail-sent-ng']")
 	private WebElement thankYouMsg; 
+	
+	@FindBy(xpath="//*[@class='wpcf7-response-output wpcf7-display-none wpcf7-validation-errors']")
+	private WebElement errorMsg; 
 	
 	public void blogSection() {
 		this.blogSection.click();
@@ -70,11 +76,16 @@ public class ContactFormPOM {
 		this.name.clear();
 		this.name.sendKeys(name);
 	}
+	public boolean emailIncorrect() {
+		return this.emailIsIncorrect.isDisplayed();
+	}
+	
 	
 	public void sendEmail(String email) {
 		this.email.clear();
-		this.email.sendKeys(email);
+		this.email.sendKeys(email); 
 	}
+	
 	public void sendSubject(String subject) {
 		this.subject.clear();
 		this.subject.sendKeys(subject);
@@ -91,7 +102,9 @@ public class ContactFormPOM {
 	public String verifyThankYouMsg() {
 		return this.thankYouMsg.getText();
 	}
-	
+	public String verifyErrorMsg() {
+		return this.errorMsg.getText();
+	}
 	
 	/**************************************************************
 	 * Function Name - scrollTo()
@@ -122,10 +135,10 @@ public class ContactFormPOM {
 	
 	Actions act= new Actions(driver);
 	act.contextClick(blogSection).build().perform(); 
+	Thread.sleep(2000);
 	Robot robot= new Robot();
 	robot.keyPress(KeyEvent.VK_DOWN);
 	Thread.sleep(2000);
-
 	robot.keyPress(KeyEvent.VK_ENTER);
 
 	ArrayList<String> windowdetails=new ArrayList<>(driver.getWindowHandles());

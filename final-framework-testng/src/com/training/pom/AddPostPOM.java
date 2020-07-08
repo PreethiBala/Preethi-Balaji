@@ -91,6 +91,8 @@ public class AddPostPOM {
 	@FindBy(xpath="//*[@class='blog-page']/div/div[1]/div[1]/div/p")
 	private WebElement addedComment; 
 	
+	@FindBy(xpath="//*[@class='asl_res_url']")
+	private WebElement getResult; 
 	
 	public void clickOnPost() {
 		this.postLink.click(); 
@@ -126,6 +128,9 @@ public class AddPostPOM {
 		return this.postPublishedMsg.isDisplayed();
 	}
 	
+	public String postPublishedMsg1() {
+		return this.postPublishedMsg.getText();
+	}
 	public void clickOnAllPost() {
 		this.allPost.click(); 
 	}
@@ -175,12 +180,19 @@ public class AddPostPOM {
 	public void clickOnnewLaunchChkBox() {
 		this.newLaunchChkBox.click(); 
 	}
+	
+	public void newLaunchChkBoxSelected() {
+		this.newLaunchChkBox.isSelected();
+	}
 	public void clickOnViewPost() {
 		this.viewPost.click(); 
 	}
 	
 	public String addedComment() {	    
 		return this.addedComment.getText();
-	
 	}
+	public String getResult() {	    
+		return this.getResult.getText();
+	}
+	
 }

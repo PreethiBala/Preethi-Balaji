@@ -3,12 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.AddPostInBlogSectionTests">
+      <class name="com.training.regression.tests.SubmitQueryUsingInvalidDetailsDBTest">
         <methods>
+          <include name="submitQueryTest"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
           <include name="setUpBeforeClass"/>
-          <include name="addCategory"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.AddPostInBlogSectionTests -->
+      </class> <!-- com.training.regression.tests.SubmitQueryUsingInvalidDetailsDBTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

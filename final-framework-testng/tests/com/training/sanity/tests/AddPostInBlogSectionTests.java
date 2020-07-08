@@ -25,12 +25,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.relevantcodes.extentreports.LogStatus;
 import com.training.generics.ScreenShot;
 import com.training.pom.AddCategoryPOM;
 import com.training.pom.AddPostPOM;
@@ -49,11 +52,12 @@ public class AddPostInBlogSectionTests extends AdminLogInTests {
 	public static Properties properties;
 	public ScreenShot screenShot;
 
-	@AfterClass
+	@AfterMethod
 	public void tearDown() throws Exception {
 		Thread.sleep(1000);
 		driver.quit();
 	}
+	
 	@Test (priority = 2)
 	public void addCategory() throws InterruptedException  {
 		addCategoryPOM = new AddCategoryPOM(driver);
@@ -66,7 +70,7 @@ public class AddPostInBlogSectionTests extends AdminLogInTests {
 		Assert.assertTrue(driver.getPageSource().contains("All Posts"));
 		Assert.assertTrue(driver.getPageSource().contains("Add New"));
 		Assert.assertTrue(driver.getPageSource().contains("Categories"));
-		Assert.assertTrue(driver.getPageSource().contains("Tags"));
+		Assert.assertTrue(driver.getPageSource().contains("Tags")); 
 
 		addCategoryPOM.clickOnCategories();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -108,9 +112,11 @@ public class AddPostInBlogSectionTests extends AdminLogInTests {
 		addPostPOM.postPublishedMsg();
 		addPostPOM.clickOnViewPost();		
 		String actualComment = addPostPOM.addedComment();
-		System.out.println( actualResult);
+		System.out.println(actualResult);
 		String expectedComment = "New Launch in Home";
 		Assert.assertEquals(actualComment , expectedComment);
+		
+
 
 	}
 }

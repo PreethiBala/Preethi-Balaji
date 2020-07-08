@@ -35,10 +35,19 @@ public class AddCategoryPOM {
 	private WebElement categoriesTitle;
 	
 	@FindBy(xpath="//*[@class='form-wrap']")  
-	private WebElement addNewCategoryTitle; 
+	private WebElement addNewCategoryTxt; 
+	
+	@FindBy(xpath="//*[@class='form-wrap']")  
+	private WebElement addNewFeatureTxt; 
+		
+	@FindBy(xpath="//*[@class='wp-heading-inline']")  
+	private WebElement addPropertyTxt; 
 	
 	@FindBy(xpath="//*[@class='wp-list-table widefat fixed striped tags']")
-	private WebElement existingCategoriesSection; 
+	private WebElement existingCategories; 
+
+	@FindBy(xpath="//*[@class='wp-list-table widefat fixed striped tags']")
+	private WebElement existingFeaturtes; 
 	
 	@FindBy(id="tag-name")
 	private WebElement tagName; 
@@ -74,13 +83,25 @@ public class AddCategoryPOM {
 	}
 	
 	public boolean addNewCategoryTitle() {
-		return this.addNewCategoryTitle.isDisplayed();
+		return this.addNewCategoryTxt.isDisplayed();
 	}
 	
 	public boolean existingCategoriesSection() {
-		return this.existingCategoriesSection.isDisplayed();
+		return this.existingCategories.isDisplayed();
 	}
-		
+	
+	public boolean addNewFeatureTitle() {
+		return this.addNewFeatureTxt.isDisplayed();
+	}
+	
+	public boolean existingFeaturtesSection() {
+		return this.existingFeaturtes.isDisplayed();
+	}
+	
+	public boolean addPropertyTitle() {
+		return this.addPropertyTxt.isDisplayed();
+	}
+	
 	public void sendName(String tagName) {
 		this.tagName.clear();
 		this.tagName.sendKeys(tagName);

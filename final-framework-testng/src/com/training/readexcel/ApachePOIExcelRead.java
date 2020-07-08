@@ -33,6 +33,8 @@ public class ApachePOIExcelRead {
 			// Get first/desired sheet from the workbook
 			XSSFSheet sheet = workbook.getSheetAt(0);
 			
+			// Get first/desired sheet from the workbook - sheet 2
+			//XSSFSheet sheet = workbook.getSheetAt(1);
 			int rowTotal = sheet.getLastRowNum();
 
 			if ((rowTotal > 0) || (sheet.getPhysicalNumberOfRows() > 0)) {
@@ -87,7 +89,7 @@ public class ApachePOIExcelRead {
 
 		return list1;
 	}
-
+/*
 	public static void main(String[] args) {
 		String fileName = "C:/Users/Naveen/Desktop/Testing.xlsx";
 		
@@ -97,5 +99,5 @@ public class ApachePOIExcelRead {
 			}
 		}
 
-	}
+	}*/
 }
