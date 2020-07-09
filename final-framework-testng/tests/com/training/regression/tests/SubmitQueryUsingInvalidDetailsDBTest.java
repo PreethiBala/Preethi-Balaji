@@ -32,12 +32,12 @@ import com.training.utility.DriverNames;
 
 
 public class SubmitQueryUsingInvalidDetailsDBTest {
-	private WebDriver driver;
-	private String baseUrl;
-	private ContactFormPOM contactFormPOM;
-	private static Properties properties;
-	private ScreenShot screenShot;
-	private GenericMethods genericMethods; 
+	public WebDriver driver;
+	public String baseUrl;
+	public ContactFormPOM contactFormPOM;
+	public Properties properties;
+	public ScreenShot screenShot;
+	public GenericMethods genericMethods; 
 
 	@BeforeClass
 	public void setUpBeforeClass() throws IOException {

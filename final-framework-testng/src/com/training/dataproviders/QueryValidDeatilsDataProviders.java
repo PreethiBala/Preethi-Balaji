@@ -24,8 +24,8 @@ public class QueryValidDeatilsDataProviders {
 			Object[]  obj = new Object[4]; 
 			obj[0] = temp.getName();  
 			obj[1] = temp.getEmail(); 
-			obj[1] = temp.getSubject();
-			obj[1] = temp.getMessage(); 
+			obj[2] = temp.getSubject();
+			obj[3] = temp.getMessage(); 
 			
 			result[count ++] = obj; 
 		}
